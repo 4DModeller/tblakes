@@ -1,3 +1,11 @@
+*.sbn
+*.dbf
+*.shp
+*.sbx
+*.shx
+*.xml
+*.prj
+
 # mac stuff
 .DS_Store
 
@@ -167,3 +175,4 @@ cython_debug/
 *.csv
 *.png
 *.zip
+*.nc
