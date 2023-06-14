@@ -172,7 +172,7 @@ cython_debug/
 
 # Data set stuff
 *.tif
-*.csv
+#*.csv
 *.png
 *.zip
 *.nc

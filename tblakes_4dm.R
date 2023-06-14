@@ -8,7 +8,7 @@ data <- read.csv("repos/tblakes/data_for_4dm.csv")
 mesh <- inla.mesh.2d(data$centroid_lon, data$centroid_lat, max.edge = 4)
 
 # Create formula for regression model
-formula <- lake_growth ~ ENDO + precip + f(mesh, model = "ar1", group = "year")
+formula <- lake_grinlowth ~ ENDO + precip + f(mesh, model = "ar1", group = "year")
 
 # Create fixed effects matrix
 fixed_effects <- model.matrix(formula, data = data)
@@ -23,5 +23,5 @@ model_formula <- cbind(fixed_effects, spatial_effect)
 model <- inla(formula = model_formula, data = data, family = "gaussian"
               , control.predictor = list(compute = TRUE))
 
-# Print the model summary
+# Print the model summaryl
 summary(model)
