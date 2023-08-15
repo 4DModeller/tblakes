@@ -5,7 +5,8 @@
 *.shx
 *.xml
 *.prj
-
+*.csv 
+*/data/*
 # mac stuff
 .DS_Store
 
