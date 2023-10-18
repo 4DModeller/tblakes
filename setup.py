@@ -3,6 +3,8 @@ creates data sets and prepares them for analysis.
 
 this is done to create consistency across all notebooks.
 """
+    
+print('creating dataset for 4d-modeller...')
 
 import pandas as pd
 import geopandas as gpd
@@ -76,3 +78,4 @@ print('dataset is found in df')
 
 if __name__ == "__main__":
     df.to_csv('data_for_4dm.csv')
+    print('data set has been created and written to file. Have a nice day!')
