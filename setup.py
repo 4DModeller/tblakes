@@ -73,3 +73,6 @@ lake_df = pd.read_csv('/Users/johnaiken/repos/tblakes/data/lake_data.csv')
 df = final_data_set.merge(lake_df, on=['HYBAS_ID', 'year'])
 df = gpd.GeoDataFrame(df)
 print('dataset is found in df')
+
+if __name__ == "__main__":
+    df.to_csv('data_for_4dm.csv')
