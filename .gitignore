@@ -1,4 +1,5 @@
 data_for_4dm.csv
+*.geojson
 *.sbn
 *.dbf
 *.shp
