@@ -78,7 +78,8 @@ def process_geotiff_in_chunks(geotiff_path, chunk_size=1024):
 
                 # Append or process this chunk DataFrame as needed
                 df = pd.concat([df, df_chunk])
-            pbar.update(1)
+                pbar.update(1)
+        pbar.close()
         
         return df
                 
