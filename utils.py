@@ -1,6 +1,7 @@
 import rasterio
 import numpy as np
 import pandas as pd
+import os
 
 def geotiff_to_dataframe(geotiff_path):
     """converts geotiff file to a pandas dataframe
