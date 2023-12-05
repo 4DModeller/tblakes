@@ -2,7 +2,7 @@ import rasterio
 import numpy as np
 import pandas as pd
 import os
-import tqdm
+from tqdm import tqdm
 
 
 def geotiff_to_dataframe(geotiff_path):
