@@ -1,40 +1,43 @@
 import utils
-import tqdm
+# from tqdm import tqdm
 import pandas as pd
 
 def process_var(var, years):
     print(f'processing {var}...')
-    return utils.get_data_frame_from_tiffs(years=years, variable=var)
+    return utils.get_dataframe_from_tiffs(years=years, variable=var)
 
 def process_outcome(var, years):
-    # TODO : implement
+    print(f'processing {var}...')
+    return utils.get_dataframe_from_tiffs(years=years, variable=var)
 
 if __name__=='__main__':
 
     years = [2012,]
     variables = ['Temperature', 'Precipitation']
-    outcome_variables = ['gsw',]
+    outcome_variables = ['Difference',]
     # mem_variables = ['snowcover',]
     mem_variables = list()
-    total_steps = 2 * (len(variables) + len(mem_variables) + len(outcome_variables))
-    pbar = tqdm(total=total_steps, 'Process Data')
+    # total_steps = 2 * (len(variables) + len(mem_variables) + len(outcome_variables))
+    # pbar = tqdm(total=total_steps, desc='Process Data')
 
     processed_vars = {}
     for var in variables:
         processed_vars[var] = process_var(var=var, years=years)
-        pbar.update(1)
+        # pbar.update(1)
 
     for var in outcome_variables:
         processed_vars[var] = process_outcome(var=var, years=years)
-        pbar.update(1)
+        # pbar.update(1)
 
     df = pd.DataFrame()
     for var in processed_vars.keys():
+        print(var)
         if df.empty == True:
+            print(var)
             df = pd.concat([df, processed_vars[var]])
         else:
             df = df.join(processed_vars[var], on=['x_coord', 'y_coord', 'year'])
-        pbar.update(1)
+        # pbar.update(1)
 
     # print('processing temperature...')
     # temperature = utils.get_dataframe_from_tiffs(years=[2012,], variable='Temperature')

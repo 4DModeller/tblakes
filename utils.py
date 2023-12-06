@@ -133,4 +133,4 @@ def get_dataframe_from_tiffs(years, variable, memory_issue=False):
         return pd.concat(all_dfs)
 
 if __name__=='__main__':
-    print('One day this might be implemented as a CLI but not this day.')
+    print('Go away.')
